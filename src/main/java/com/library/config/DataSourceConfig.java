@@ -11,7 +11,7 @@ public class DataSourceConfig {
 
     private static String dbUrl = "jdbc:mysql://localhost/library?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static String username = "root";
-    private static String password = "root";
+    private static String password = "";
 
     @Bean
     public DataSource dataSource() {
