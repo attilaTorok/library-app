@@ -12,54 +12,54 @@ import javax.persistence.OneToOne;
 @Entity
 public class BookEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@Column(unique = true)
-	private String title;
-	
-	@OneToOne
-	private AuthorEntity author;
-	
-	private LocalDateTime releaseDate;
-	
-	private boolean loaned;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	public String getTitle() {
-		return title;
-	}
+    @Column(unique = true)
+    private String title;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    @OneToOne
+    private AuthorEntity author;
 
-	public AuthorEntity getAuthor() {
-		return author;
-	}
+    private LocalDateTime releaseDate;
 
-	public void setAuthor(AuthorEntity author) {
-		this.author = author;
-	}
+    private boolean loaned;
 
-	public LocalDateTime getReleaseDate() {
-		return releaseDate;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setReleaseDate(LocalDateTime releaseDate) {
-		this.releaseDate = releaseDate;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public boolean isLoaned() {
-		return loaned;
-	}
+    public AuthorEntity getAuthor() {
+        return author;
+    }
 
-	public void setLoaned(boolean loaned) {
-		this.loaned = loaned;
-	}
+    public void setAuthor(AuthorEntity author) {
+        this.author = author;
+    }
 
-	public Long getId() {
-		return id;
-	}
-	
+    public LocalDateTime getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDateTime releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public boolean isLoaned() {
+        return loaned;
+    }
+
+    public void setLoaned(boolean loaned) {
+        this.loaned = loaned;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
 }
