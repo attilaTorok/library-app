@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.library.repository.repository.domain.BookEntity;
 
 /**
- * {@link com.library.repository.repository.domain.BookDao BookDao} is an interface for generic CRUD operations on a 
+ * BookDao is an interface for generic CRUD operations on a 
  * {@link com.library.repository.repository.domain.BookEntity BookEntity} repository.
  * 
  * @author Török Attila

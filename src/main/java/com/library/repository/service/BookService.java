@@ -64,7 +64,7 @@ public class BookService implements IOService<BookDto> {
 
 	/**
 	 * Perform a database query with the given book title.
-	 * @param the title of the book
+	 * @param title the title of the book
 	 * @return books with the title
 	 */
 	public List<BookDto> findBooksByTitle(String title) {

@@ -9,12 +9,10 @@ import java.util.List;
  * @param <T> the generic type. Should be a DTO.
  * @author Török Attila
  */
-
 public interface IOService<T> {
 
     /**
      * Get every generic type data from the repository.
-     * @param <T> the generic type.
      * @since 0.0.1-SNAPSHOT
      * @return a list of the data
      */
@@ -22,7 +20,7 @@ public interface IOService<T> {
 
     /**
      * Get a generic type data by id.
-     * @param <T> the generic type.
+     * @param id the data id that want to be found
      * @since 0.0.1-SNAPSHOT
      * @return The found data.
      */
@@ -30,15 +28,14 @@ public interface IOService<T> {
 
     /**
      * Save the given generic type to the database.
-     * @param <T> the generic type.
+     * @param t the generic type object.
      * @since 0.0.1-SNAPSHOT
      */
     void save(T t);
     
     /**
      * Delete the given generic type to the database.
-     * @param <T> the generic type.
-     * @param t
+     * @param t the generic type object.
      */
     void delete(T t);
 }

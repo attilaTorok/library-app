@@ -9,7 +9,7 @@ import com.library.repository.dto.BookDto;
 import com.library.view.addbook.model.AddBookRequest;
 
 /**
- * {@link com.library.view.addbook.transformer.AddBookTransformer AddBookTransformer} is describing a Java class that can perform
+ * AddBookTransformer is describing a Java class that can perform
  *  {@link com.library.view.addbook.model.AddBookRequest AddBookRequest}-to-{@link com.library.repository.dto.BookDto BookDto} conversions.
  * 
  * @author Török Attila
@@ -21,7 +21,7 @@ public class AddBookTransformer {
 	
 	/**
 	 * Transform the given {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} to {@link com.library.repository.dto.BookDto BookDto}.
-	 * @param an {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} object
+	 * @param addBookRequest an {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} object
 	 * @return a new {@link com.library.repository.dto.BookDto BookDto} object from the parameter
 	 */
 	public BookDto transformAddBookRequestToBookDto(AddBookRequest addBookRequest) {
