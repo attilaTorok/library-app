@@ -17,6 +17,12 @@ public class AddBookFormController {
 
 	public static final String REQUEST_MAPPING = "/addBookForm";
 
+	/**
+	 * When a requests come to the /addBookForm page an {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} passed to the controller.
+	 * 
+	 * @param addBookRequest the model of the request.
+	 * @return a new requests
+	 */
 	@ModelAttribute("addBookRequest")
 	public AddBookRequest createListBooksModel(@ModelAttribute AddBookRequest addBookRequest) {
 		return new AddBookRequest();

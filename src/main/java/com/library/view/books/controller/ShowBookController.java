@@ -13,6 +13,11 @@ import com.library.view.books.model.BookSummaryView;
 import com.library.view.books.model.ShowBookRequest;
 import com.library.view.books.transformer.BookTransformer;
 
+/**
+ * A spring controller to handle the /showBook requests.
+ * 
+ * @author Török Attila
+ */
 @Controller
 public class ShowBookController {
 
@@ -24,12 +29,23 @@ public class ShowBookController {
 	@Autowired
 	private BookTransformer bookTransformer;
 	
+	/**
+	 * When a requests come to the /showBook page an {@link com.library.view.books.model.ShowBookRequest ShowBookRequest} passed to the controller.
+	 * 
+	 * @param showBookRequest the model of the request
+	 * @return a list from the books in the database
+	 */
 	@ModelAttribute("bookDetailsModel")
     public BookDetailsModel createBookDetailsModel(ShowBookRequest showBookRequest) {
         BookDto book = findBook(showBookRequest.getBookId());
         return initBookDetailsModel(book);
     }
 	
+	/**
+	 * Controller method to handle incoming methods.
+	 * 
+	 * @return the book_details view
+	 */
 	@RequestMapping(REQUEST_MAPPING)
     public String showBooks() {
         return "book_details";

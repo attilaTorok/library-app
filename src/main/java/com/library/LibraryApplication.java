@@ -10,6 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * Spring boot entry point with annotation configurations.
+ * 
+ * @author Török Attila
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
@@ -18,6 +23,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 public class LibraryApplication extends SpringBootServletInitializer {
 
+	/**
+	 * Entry point.
+	 * @param args arguments
+	 */
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(LibraryApplication.class, args);
 

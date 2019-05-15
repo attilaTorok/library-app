@@ -33,12 +33,27 @@ public class AddBookPostController {
 	@Autowired
 	private AddBookTransformer addBookTransformer;
 	
+	/**
+	 * When a requests come to the /addBookPost page an {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} passed to the controller.
+	 * @param addBookRequest the model of the request.
+	 * @return a new requests
+	 */
 	@ModelAttribute("addBookRequest")
 	public AddBookRequest createListBooksModel(@ModelAttribute AddBookRequest addBookRequest) {
 		return new AddBookRequest();
 	}
 	
-	@RequestMapping(value = REQUEST_MAPPING)
+	/**
+	 * When a requests come to the /addBookPost page an {@link com.library.view.addbook.model.AddBookRequest AddBookRequest} passed to the controller.
+	 * If it is a valid requests a new book is saved to the database.
+	 * 
+	 * @param addBookRequest the model of the request.
+	 * @param bindingResult {@link org.springframework.validation.BindingResult BindingResult}
+	 * @param redirectAttributes {@link org.springframework.web.servlet.mvc.support.RedirectAttributes RedirectAttributes}
+	 * @return a view depends on the outcome of the function body
+	 * @throws IOException
+	 */
+	@RequestMapping(value = REQUEST_MAPPING)	 
 	private String createBook(@Valid AddBookRequest addBookRequest, BindingResult bindingResult, RedirectAttributes redirectAttributes) throws IOException {
 		String result;
 		

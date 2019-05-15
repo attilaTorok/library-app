@@ -17,7 +17,7 @@ public interface BookDao extends CrudRepository<BookEntity, Long> {
 	/**
 	 * Perform a search by title while case like is not important.
 	 * 
-	 * @param title
+	 * @param title the title which need to be found
 	 * @return the found book entities
 	 */
 	List<BookEntity> findByTitleIgnoreCaseLike(String title);

@@ -12,7 +12,7 @@ import com.library.repository.repository.domain.BookEntity;
 
 /**
  * {@link com.library.repository.converter.BookDtoToEntity BookDtoToEntity} is describing a Java class that can perform
- *  {@link com.library.repository.dto.BookDto BookDto}-to-{@link com.library.repository.repository.dao.BookDao BookDao} conversions.
+ *  {@link com.library.repository.dto.BookDto BookDto}-to-{@link com.library.repository.repository.domain.BookEntity BookEntity} conversions.
  * 
  * 
  * @author Török Attila
@@ -24,6 +24,10 @@ public class BookDtoToEntity implements Converter<BookDto, BookEntity> {
 	@Autowired
 	private BookDao bookDao;
 	
+	/**
+	 * Convert a {@link com.library.repository.dto.BookDto BookDto} to {@link com.library.repository.dto.BookDto BookDto}.
+	 * @param source the BookDto which need to be converted.
+	 */
 	@Override
 	public BookEntity convert(BookDto source) {
 		if (source == null) {
