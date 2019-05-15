@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="jumbotron text-center" style="margin-bottom: 0">
+		<h1>Book Manager</h1>
+	</div>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<a class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/books}">Books</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/addBookForm}">Manage books</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<form action="#" th:action="@{/books}" th:object="${listBooksRequest}"
+			method="get">
+			<p>
+				Title <input type="text" th:field="*{title}" placeholder="Title" />
+			</p>
+			<button type="submit">Search</button>
+		</form>
+			<table class="table table-dark table-striped">
+				<thead>
+					<tr>
+						<th>author</th>
+						<th>title</th>
+						<th>release date</th>
+						<th>quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="book: ${listBooksModel.books}">
+						<td th:text="${book.author}" />
+						<td><a th:href="@{${book.detailsUrl}}"><p
+									th:text="${book.title}"></a></td>
+						<td th:text="${book.releaseDate}" />
+						<td th:text="${book.quantity}" />
+					</tr>
+				</tbody>
+			</table>
+		</form>
+</body>
+</html>
