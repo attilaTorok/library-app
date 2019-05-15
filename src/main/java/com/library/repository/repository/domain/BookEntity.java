@@ -36,6 +36,7 @@ public class BookEntity {
 
     private LocalDateTime releaseDate;
     
+    @Column(length=1000)
     private String description;
 
     private int quantity;

@@ -45,25 +45,30 @@
 			</p>
 			<button type="submit">Search</button>
 		</form>
-			<table class="table table-dark table-striped">
-				<thead>
-					<tr>
-						<th>author</th>
-						<th>title</th>
-						<th>release date</th>
-						<th>quantity</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="book: ${listBooksModel.books}">
-						<td th:text="${book.author}" />
-						<td><a th:href="@{${book.detailsUrl}}"><p
-									th:text="${book.title}"></a></td>
-						<td th:text="${book.releaseDate}" />
-						<td th:text="${book.quantity}" />
-					</tr>
-				</tbody>
-			</table>
+		<table class="table table-dark table-striped">
+			<thead>
+				<tr>
+					<th>author</th>
+					<th>title</th>
+					<th>release date</th>
+					<th>quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book: ${listBooksModel.books}">
+					<td th:text="${book.author}" />
+					<td><a th:href="@{${book.detailsUrl}}"><p
+								th:text="${book.title}"></a></td>
+					<td th:text="${book.releaseDate}" />
+					<td th:text="${book.quantity}" />
+
+					<td><a th:href="@{${book.deleteUrl}}">
+							<p>Delete</p>
+					</a></td>
+
+				</tr>
+			</tbody>
+		</table>
 		</form>
 </body>
 </html>

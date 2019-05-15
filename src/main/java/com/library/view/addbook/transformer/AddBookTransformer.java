@@ -35,6 +35,7 @@ public class AddBookTransformer {
 		bookDto.setTitle(addBookRequest.getTitle());
 		bookDto.setReleaseDate(LocalDateTime.now());
 		bookDto.setQuantity(addBookRequest.getQuantity());
+		bookDto.setDescription(addBookRequest.getDescription());
 		
 		return bookDto;
 	}

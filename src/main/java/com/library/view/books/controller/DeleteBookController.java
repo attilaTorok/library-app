@@ -1,21 +1,20 @@
 package com.library.view.books.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.library.repository.dto.BookDto;
 import com.library.repository.service.BookService;
-import com.library.view.books.model.BookDetailsModel;
-import com.library.view.books.model.BookDetailsView;
-import com.library.view.books.model.BookSummaryView;
-import com.library.view.books.model.ListBooksModel;
-import com.library.view.books.model.ListBooksRequest;
 import com.library.view.books.model.ShowBookRequest;
-import com.library.view.books.transformer.BookTransformer;
 
+/**
+ * A spring controller to handle the /deleteBook requests.
+ * 
+ * @author Török Attila
+ */
+@Controller
 public class DeleteBookController {
 
 	public static final String REQUEST_MAPPING = "/deleteBook";
@@ -23,15 +22,27 @@ public class DeleteBookController {
 	@Autowired
 	private BookService bookService;
 	
+	/**
+	 * Define model attribute for the controller.
+	 * 
+	 * @param showBookRequest the id of the book
+	 * @return an empty request
+	 */
 	@ModelAttribute("bookDetailsModel")
-    public void createBookDetailsModel(ShowBookRequest showBookRequest) {
-		bookService.delete(bookService.getById(showBookRequest.getBookId()));
+    public ShowBookRequest createBookDetailsModel(ShowBookRequest showBookRequest) {
+		return new ShowBookRequest();
     }	
 	
-	@RequestMapping(value = "/valami")
-    public String showBooks() {
-		
-        return "books";
+	/**
+	 * Deleting a book with the given id.
+	 * 
+	 * @param showBookRequest the id of the book
+	 * @return redirecting to books page
+	 */
+	@RequestMapping(REQUEST_MAPPING)
+    public String showBooks(ShowBookRequest showBookRequest) {
+		bookService.delete(bookService.getById(showBookRequest.getBookId()));
+        return "redirect:books";
     }
 	
 	

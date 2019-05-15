@@ -29,8 +29,6 @@ public class LibraryApplication extends SpringBootServletInitializer {
 	 */
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(LibraryApplication.class, args);
-
-        //context.getBean(Populate.class).initData(); // <-- here
 	}
 
 }
