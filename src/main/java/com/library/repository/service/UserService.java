@@ -13,6 +13,12 @@ import com.library.repository.dto.UserDto;
 import com.library.repository.repository.dao.UserDao;
 import com.library.repository.repository.domain.UserEntity;
 
+/**
+ * A spring service which get the user entities from the database and return them as dtos.
+ * 
+ * @author Török Attila
+ * @see com.library.repository.service.IOService IOService
+ */
 @Service
 public class UserService implements IOService<UserDto> {
 
@@ -57,6 +63,13 @@ public class UserService implements IOService<UserDto> {
 		userDao.delete(dtoToEntityConverter.convert(t));			
 	}
 	
+	/**
+	 * Find a user in the datebase by username.
+	 * Delegate a query and do the necessary convertions.
+	 * 
+	 * @param username a user name 
+	 * @return if the user is in the database then it is returned, null otherwise
+	 */
 	public UserDto getByUsername(String username) {
 		Optional<UserEntity> optional = userDao.findByUsername(username);
 		

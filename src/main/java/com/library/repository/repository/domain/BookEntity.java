@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * {@link com.library.repository.repository.domain.BookEntity BookEntity} is a class which defines the data in the database.
+ * {@link com.library.repository.repository.domain.BookEntity BookEntity} is a class which defines a book in the database.
  * 
  * @author Török Attila
  *

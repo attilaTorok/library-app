@@ -14,7 +14,7 @@ import com.library.repository.repository.dao.BookDao;
 import com.library.repository.repository.domain.BookEntity;
 
 /**
- * A spring service which get entities from the database and return them as dtos.
+ * A spring service which get book entities from the database and return them as dtos.
  * 
  * @author Török Attila
  *

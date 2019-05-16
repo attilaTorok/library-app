@@ -10,6 +10,12 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * {@link com.library.repository.repository.domain.UserEntity UserEntity} is a class which defines a user in the database.
+ * 
+ * @author Török Attila
+ *
+ */
 @Getter
 @Setter
 @Entity

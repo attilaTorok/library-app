@@ -25,7 +25,7 @@ public class BookDtoToEntity implements Converter<BookDto, BookEntity> {
 	private BookDao bookDao;
 	
 	/**
-	 * Convert a {@link com.library.repository.dto.BookDto BookDto} to {@link com.library.repository.dto.BookDto BookDto}.
+	 * Convert a {@link com.library.repository.dto.BookDto BookDto} to {@link com.library.repository.repository.domain.BookEntity BookEntity}.
 	 * @param source the BookDto which need to be converted.
 	 */
 	@Override
